@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 
+	<hr>
 	<h3 class="h3-color"> Top 5 products <h3>
 
 	<div class="row" style ="margin-top:20px; margin-top:5px; ">
@@ -9,12 +10,12 @@
 		<div class="col-lg-2" style = "margin-top: 5px;">
 			<img class="thumbnail2"src="{{product.imageURL}}">
 			<div >
-				<h6 style ="margin-top: 10px"><strong><strong>Top{{ forloop.counter}}:</strong> {{product.name}}</strong></h6>
+				<h6 style ="margin-top: 10px"><strong><strong>Top {{ forloop.counter}}:</strong> {{product.name}}</strong></h6>
 			</div>
 		</div>
 		{% endfor %}
 	</div>
-
+	<hr>
 	<h3> Available products <h3>
 	<div class="row">
 		{% for product in products %}
