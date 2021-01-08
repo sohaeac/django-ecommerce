@@ -17,7 +17,8 @@ def store(request):
 	products = Product.objects.all()
 	rank = Ranking()
 	
-	context = {'products':products, 'cartItems':cartItems, 'topProducts': rank.topOrderedProducts}
+	
+	context = {'products':products, 'cartItems':cartItems, 'topProducts': rank.topOrderedProducts()}
 	return render(request, 'store/store.html', context)
 
 
@@ -37,6 +38,11 @@ def checkout(request):
 	cartItems = data['cartItems']
 	order = data['order']
 	items = data['items']
+	print("********************************************")
+	rank = Ranking()
+	rank.addBoughtProducts(items)
+	rank.topOrderedProducts()
+	
 
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/checkout.html', context)
@@ -45,8 +51,6 @@ def updateItem(request):
 	data = json.loads(request.body)
 	productId = data['productId']
 	action = data['action']
-	print('Action:', action)
-	print('Product:', productId)
 
 	customer = request.user.customer
 	product = Product.objects.get(id=productId)
@@ -69,6 +73,7 @@ def updateItem(request):
 def processOrder(request):
 	transaction_id = datetime.datetime.now().timestamp()
 	data = json.loads(request.body)
+	#print(data)
 
 	if request.user.is_authenticated:
 		customer = request.user.customer
@@ -92,5 +97,5 @@ def processOrder(request):
 		state=data['shipping']['state'],
 		zipcode=data['shipping']['zipcode'],
 		)
-
+	
 	return JsonResponse('Payment submitted..', safe=False)

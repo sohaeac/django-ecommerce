@@ -71,6 +71,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
+#REDIS
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
