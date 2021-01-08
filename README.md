@@ -13,7 +13,7 @@ This is a simple e-commerce website built with Django.
 You should start by having Python installed on your computer. 
 
 - Download or clone de repository
-- Install Redis (you can install it [here](https://redis.io/download).)
+- Install Redis (you can download it from [here](https://redis.io/download). or follow these [steps](https://redislabs.com/blog/redis-on-windows-10/) on Windows 10)
 
 - Install the project dependencies with :
     ```
@@ -35,7 +35,7 @@ The website displays products. Users can add and remove products to/from their c
     - Guest checkout 
     - Special checkout for digital products
     - Product ranking by Top ordered products
-## To implement
+### To implement
     - Product view
     - Payments processing 
     - Product ranking by Top viewed products
@@ -43,4 +43,6 @@ The website displays products. Users can add and remove products to/from their c
 ## Project contribution
 If you want to contribute to the project by adding new features listed above, you are welcome :) 
 ## Sources 
-Project based on Dennis Ivy's [tutorial](https://www.youtube.com/channel/UCTZRcDjjkVajGL6wd76UnGg).
+- Project based on Dennis Ivy's [tutorial](https://www.youtube.com/channel/UCTZRcDjjkVajGL6wd76UnGg). 
+- [Redis documentation](https://redis.io/documentation)
+- [How to install Redis on Windows 10](https://redislabs.com/blog/redis-on-windows-10/)
