@@ -38,7 +38,6 @@ def checkout(request):
 	cartItems = data['cartItems']
 	order = data['order']
 	items = data['items']
-	print("********************************************")
 	rank = Ranking()
 	rank.addBoughtProducts(items)
 	rank.topOrderedProducts()
@@ -73,7 +72,6 @@ def updateItem(request):
 def processOrder(request):
 	transaction_id = datetime.datetime.now().timestamp()
 	data = json.loads(request.body)
-	#print(data)
 
 	if request.user.is_authenticated:
 		customer = request.user.customer
