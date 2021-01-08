@@ -11,12 +11,14 @@ This is a simple e-commerce website built with Django.
 
 # How to use? 
 You should start by having Python installed on your computer. 
+
     - Download or clone de repository
     - Install Redis (you can install it [here](https://redis.io/download).)
+
 Install the project dependencies with :
-    ```
-    pip install requirements.txt
-    ```
+```
+pip install requirements.txt
+```
 Now you can run the project with this command:
 ```
 python manage.py runserver
