@@ -36,6 +36,7 @@ The website displays products. Users can add and remove products to/from their c
     - Special checkout for digital products
     - Product ranking by Top ordered products
 ### To implement
+    - Loging feature
     - Product view
     - Payments processing 
     - Product ranking by Top viewed products
