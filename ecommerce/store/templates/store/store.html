@@ -1,6 +1,21 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
+
+	<h3 class="h3-color"> Top 5 products <h3>
+
+	<div class="row" style ="margin-top:20px; margin-top:5px; ">
+		{% for product in topProducts %}
+		<div class="col-lg-2" style = "margin-top: 5px;">
+			<img class="thumbnail2"src="{{product.imageURL}}">
+			<div >
+				<h6 style ="margin-top: 10px"><strong><strong>Top{{ forloop.counter}}:</strong> {{product.name}}</strong></h6>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+	<h3> Available products <h3>
 	<div class="row">
 		{% for product in products %}
 		<div class="col-lg-4">
@@ -12,11 +27,9 @@
 				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
 				
 				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>
+				<h4 style="display: inline-block; float: right"><strong>{{product.price}}€</strong></h4>
 
 			</div>
 		</div>
 		{% endfor %}
-	</div>
-
 {% endblock content %}

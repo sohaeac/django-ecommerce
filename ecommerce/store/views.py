@@ -4,6 +4,8 @@ import json
 import datetime
 from .models import * 
 from .utils import cookieCart, cartData, guestOrder
+import random
+from .ranking import Ranking
 
 def store(request):
 	data = cartData(request)
@@ -13,7 +15,9 @@ def store(request):
 	items = data['items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
+	rank = Ranking()
+	
+	context = {'products':products, 'cartItems':cartItems, 'topProducts': rank.topOrderedProducts}
 	return render(request, 'store/store.html', context)
 
 
